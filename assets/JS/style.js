@@ -18,12 +18,16 @@ function checkWinner(pM, aM){
     if(pM === aM){
         return 2
     } else if(pM === 'r' && aM ==='p'){
+        aiWins++
         return 1
     } else if(pM === 'p' && aM ==='s'){
+        aiWins++
         return 1
     } else if(pM === 's' && aM ==='r'){
+        aiWins++
         return 1
     } else {
+        playerWins++
         return 0
     }
 }
