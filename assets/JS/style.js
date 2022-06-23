@@ -15,7 +15,7 @@ function AIMove(){
 }
  //0 means player won, 1 means ai won, 2 means tie
 function checkWinner(pM, aM){
-    if(pM === aM){
+    if(pM == aM){
         return 2
     } else if(pM === 'r' && aM ==='p'){
         aiWins++
@@ -33,7 +33,7 @@ function checkWinner(pM, aM){
 }
 
 function printScore(result){
-    if(result===0){
+    if(result === 0){
         alert("You won")
     } else if(result === 1){
         alert("AI won")
@@ -53,12 +53,12 @@ function printScoreBoard(){
 while(!gameOver){
     var playerMove = askPlayerMove()
     var aiMove = AIMove()
-    var result = checkWinner(playerMove, AIMove)
-    printScore()
+    alert("You made:" + playerMove + " Ai made:" + aiMove)
+    var result = checkWinner(playerMove, aiMove)
+    printScore(result)
     printScoreBoard()
-    gameOver = confirm("Want to play again?")
+    gameOver = !confirm("Want to play again?")
 
-    
 }
 
 
