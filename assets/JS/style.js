@@ -34,22 +34,31 @@ function checkWinner(pM, aM){
 
 function printScore(result){
     if(result===0){
-        console.log("You won")
+        alert("You won")
     } else if(result === 1){
-        console.log("AI won")
+        alert("AI won")
     } else {
-        console.log("It's a tie")
+        alert("It's a tie")
     }
 }
 
-
-var playerMove = askPlayerMove()
-var aiMove = AIMove()
-
-
-
-/*while(!gameOver){
-    var result = checkWinner()
+function printScoreBoard(){
+    alert ("Player wins: " + playerWins + "Computer wins: " + aiWins)
 }
-*/
+
+
+
+
+
+while(!gameOver){
+    var playerMove = askPlayerMove()
+    var aiMove = AIMove()
+    var result = checkWinner(playerMove, AIMove)
+    printScore()
+    printScoreBoard()
+    gameOver = confirm("Want to play again?")
+
+    
+}
+
 
